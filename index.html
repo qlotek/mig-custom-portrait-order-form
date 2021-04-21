@@ -4,66 +4,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Request a custom portrait</title>
 </head>
 <body>
+
+
+    <div class="container">
     <h1>Request a custom portrait</h1>
 
-<ol>
+<!-- <ol>
     <li>You submit a request.</li>
     <li>I confirm price and delivery date.</li>
     <li>You accept and pay. Preferably by Paypal.</li>
-    <li>I get work and deliver.</li>
-</ol>
+    <li>You get your artwork in the mail.</li>
+</ol> -->
     
 <form action="post">
 
+    <div class="row">
+        <div class="col-md-6">
+            
+            <div class="form-group">
+                <label for="name" required>Full Name (required)</label>
+                <input type="text" name="name" class="form-control" placeholder="Shirley Eugest">
+              </div>
+        <div class="form-group">
+            <label for="email" required>Email (required)</label>
+            <input type="email" name="email" class="form-control" placeholder="shirley.eugest@thatplace.com">
+        </div>
 
-<fieldset>
-    <legend>Basic info</legend>
-<label for="name">Full Name</label>
-<input type="text" name="name">
-<label for="email">Email</label>
-<input type="email" name="email">
-</fieldset>
 
 
-<fieldset>
-    <legend>Specifications</legend>
-<label for="size">Size</label>
-<select name="size" id="size">
-    <option value="A5">A5 - 148 x 210mm /	5.8 x 8.3 inch)</option>
-    <option value="A4">A4 - (210 x 297mm / 8.3 x 11.7 inch)</option>
-    <option value="A3">A3  - (297 x 420mm / 11.7 x 16.5 inch) </option>
-    <option value="custom">Custom size (specify in message) </option>
+        <div class="form-group">
+            <label for="message">Message</label>
+          <textarea name="message" id="message" cols="30" rows="3" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="photo">Original photo (required)</label>
+            <input type="file" id="photo" required>
+            <!-- <p class="help-block">Example block-level help text here.</p> -->
+          </div>
+
+<div class="form-group">
+        <label for="size">Portrait size</label>
+        <select name="size" id="size" class="form-control">
+            <option value="A5">A5 - 148 x 210mm /	5.8 x 8.3 inch)</option>
+            <option value="A4" selected>A4 - (210 x 297mm / 8.3 x 11.7 inch)</option>
+            <option value="A3">A3  - (297 x 420mm / 11.7 x 16.5 inch) </option>
+            <option value="custom">Custom size (specify in message) </option>
+            
+        </select>
+    </div>
+
+
     
-</select>
 
-<label for="people">Number of people</label>
-<select name="people" id="">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-</select>
+    <div class="form-group">
+        <label for="people">Number of people/faces in the portrait</label>
+        <select name="people" id="people" class="form-control">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        
+    </div>
+     
+    <div class="form-group">
+        
+        <label for="technique">Technique and colors</label>
+        <select onchange="updateSampleImage()" name="technique" id="technique" class="form-control">
+            <option value="pencil" selected>Pencil</option>
+            <option value="watercolor-bw" >Watercolor - black and white</option>
+            <option value="watercolor-color">Watercolor full color</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="instructions">Special requests or instructions (Optional - may affect the price)</label>
+      <textarea name="instructions" id="instructions" cols="30" rows="3" class="form-control"></textarea>
+      <div>Estimated price <span id="pricedisplay"></span></div>
+      <button type="submit" class="btn btn-primary">Submit request</button>
+
+    </div>
+    </div>
+        <div class="col-md-6">
+            
+       
+      
+        <img id="sampleimage" src="pix/sampleimage-pencil.jpg" alt=""></div>
+      </div> 
+
+             
+           
+      
 
 
-<img id="sampleimage" src="pix/sampleimage-pencil.jpg" alt="">
+     
 
-<label for="technique">Technique and colors</label>
-<select onchange="updateSampleImage()" name="technique" id="technique">
-    <option value="pencil">Pencil</option>
-    <option value="watercolor-bw">Watercolor - black and white</option>
-    <option value="watercolor-color">Watercolor full color</option>
-</select>
-<label for="message">Message/Special Request</label>
-<textarea name="message" id="message" cols="30" rows="10"></textarea>
-</fieldset>
+
+
+
+
 </form>
-    
-    
+
+<!-- <h2>Terms</h2>
+    <ul>
+        <li>No refunds.</li>
+        <li>Commercial use is not permitted. Apart from that you are of course free to use, copy and publish it as you like. It's yours. </li>
+        <li></li>
+        <li></li>
+    </ul> -->
+
+</div>
     <script src="app.js"></script>
     
 </body>
