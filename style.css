@@ -1,4 +1,117 @@
+:root {
+
+    --papersizebaseunit: 0.6px;
+}
 
 
-img#sampleimage {
-    box-shadow: 5px 10px 10px #888888;}
+
+
+
+    .form-check, .form-check-input {
+        float: none !important;
+        margin: 0 !important;
+    }
+
+
+fieldset {
+    
+    border-radius: 5px;
+    box-shadow: 5px 10px 30px #888888; 
+
+}
+
+.papershape {
+    background:#eee;
+    background-image: linear-gradient(#fffefa, #fafafa);
+    /* border: 1px solid #ddd; */
+    /* box-shadow: 5px 10px 10px #888888; */
+    margin: 0 auto;
+}
+
+
+
+.a5shape { 
+    height: calc(var(--papersizebaseunit) * 210);
+    width: calc(var(--papersizebaseunit) * 148);
+}
+
+.a4shape { 
+    height: calc(var(--papersizebaseunit) * 297);
+    width: calc(var(--papersizebaseunit) * 210);
+
+}
+
+
+.a3shape { 
+    height: calc(var(--papersizebaseunit) * 420);
+    width: calc(var(--papersizebaseunit) * 297);
+}
+
+.papershape.pencil {
+    background-image: url(pix/sampleimage-pencil.jpg);
+    background-size: cover;
+}
+
+.papershape.watercolor-bw {
+    background-image: url(pix/sampleimage-watercolor-bw.jpg);
+    background-size: cover;
+}
+
+.papershape.watercolor-color {
+    background-image: url(pix/sampleimage-watercolor-color.jpg);
+    background-size: cover;
+}
+
+input[type=radio] + br + label  {
+    border: 2px solid white;
+    box-shadow: 2px 5px 5px #888888;
+}
+
+:checked + br + label {
+    border-color:  #0d6efd !important;
+    box-shadow: 5px 10px 10px #888888;
+  }
+
+
+  .estimated-price {
+      background: #3195F0;
+      color: white;
+      padding: 1rem;
+      border-radius: 5px;
+  }
+
+
+  .estimated-price .heading {
+   color: #B8DAF9;
+    font-size: 1rem;
+    font-weight: strong;
+}
+
+.estimated-price #pricedisplay {
+    font-size: 3rem;
+    font-weight: strong;
+}
+
+
+.estimated-price #currency-display {
+    font-size: 3rem;
+    color: #B8DAF9;
+}
+  
+
+
+.terms {
+    background: gray;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+
+.apprx-price-disclaimer {
+    color: red;
+}
+
+select#currency {
+
+}
